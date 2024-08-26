@@ -45,20 +45,22 @@ class ViewController: UIViewController {
     
     func printName(input: Int) {
         let firstName: String = "Abouzar"
-        let lastName: String = "Moradian"
-        if input > 100 || input < 0 { return }
+        let lastName: String = " Moradian"
+        var output: String = ""
+        guard input >= 0 && input <= 100 else { return }
+
         
-        if input % 3 == 0 {
-            
-            if input % 5 ==  0{
-                print("\(firstName) \(lastName)")
-            }else{
-                print(firstName)
-            }
-            
-        } else if input % 5 == 0 {
-            print(lastName)
+        if input % 3 == 0{
+            output += firstName
         }
+        if input % 5 == 0{
+            output += lastName
+        }
+        print(output)
+            
+  
+            
+        
     }
 
 }
