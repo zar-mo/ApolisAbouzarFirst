@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         removeDuplicate()
         printEvenNumbers()
         printName(input: Int.random(in: 0...100))
+        secondLargest(input: inputArray)
         
         
     }
@@ -57,10 +58,25 @@ class ViewController: UIViewController {
             output += lastName
         }
         print(output)
-            
-  
-            
+      
+    }
+    
+    func secondLargest(input: [Int]) -> Int?{
         
+        guard input.count < 1 else {return nil}
+        var largest: Int = Int.min
+        var secondLargest: Int = Int.min
+        
+        for num in input{
+            if largest < num{
+                secondLargest = largest
+                largest = num
+            }else if secondLargest < num {
+                secondLargest = num
+            }
+        }
+        
+        return secondLargest
     }
 
 }
