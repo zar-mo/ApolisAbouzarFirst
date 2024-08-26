@@ -8,12 +8,58 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let inputArray: [Int] = [1, 4, 2, 1, 4, 5, 3, 4, 4, 8, 7, 7]
+    var outputArray: [Int] = []
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        removeDuplicate()
+        printEvenNumbers()
+        printName(input: Int.random(in: 0...100))
+        
+        
     }
-
+    
+    func removeDuplicate() {
+        
+        for num in inputArray{
+            if !outputArray.contains(num){
+                outputArray.append(num)
+            }
+        }
+    }
+    
+    func printEvenNumbers(){
+        
+        for num in 0...100 {
+            if num % 2 == 0{
+                print(num)
+            }
+        }
+    }
+    
+    func printName(input: Int) {
+        let firstName: String = "Abouzar"
+        let lastName: String = "Moradian"
+        if input > 100 || input < 0 { return }
+        
+        if input % 3 == 0 {
+            
+            if input % 5 ==  0{
+                print("\(firstName) \(lastName)")
+            }else{
+                print(firstName)
+            }
+            
+        } else if input % 5 == 0 {
+            print(lastName)
+        }
+    }
 
 }
 
